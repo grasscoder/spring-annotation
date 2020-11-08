@@ -24,6 +24,8 @@ public class LinuxCondition implements Condition {
         Environment environment = context.getEnvironment();
         //4、获取bean定义的注册类，所有的bean 定义都在其中注册，可以查询是否存在bean定义，也可以使用其注册一个bean
         BeanDefinitionRegistry registry = context.getRegistry();
+        //判断容器中bean中注册情况，也可以向容器中注册bean
+        boolean containsBeanDefinition = registry.containsBeanDefinition("person");
 
         String osName = environment.getProperty("os.name");
         System.out.println("操作系统类型：" + osName);

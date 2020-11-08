@@ -1,12 +1,20 @@
 package com.annotation.config;
 
+import com.annotation.bean.Car;
 import com.annotation.bean.Person;
 import com.annotation.condition.LinuxCondition;
+import com.annotation.condition.MyImportBeanDefinitionRegistrar;
+import com.annotation.condition.MyImportSelector;
 import com.annotation.condition.WindowsCondition;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.*;
 
 @Configuration
+//@Conditional(value = {LinuxCondition.class})
+//@Conditional 标注在类上，满足当前条件，这个类中配置的所有的bean才能生效
+@Import({Car.class, MyImportSelector.class, MyImportBeanDefinitionRegistrar.class})
+//@Import id默认组件全限定类名
+//MyImportSelector.class 中定义了需要导入的类的全限定名
 public class MyConfig2 {
 
     @Bean
@@ -32,4 +40,14 @@ public class MyConfig2 {
     public Person person02() {
         return new Person("JackMa", 50);
     }
+    /**
+     * 给容器注册组件方式：
+     * 1、包扫描 + 组件注解(@Service/@Component/@Repository/@Controller),适用于自己写的类
+     * 2、@Bean 导入第三方的组件
+     * 3、@Import 快速给容器中导入一个组件
+     *      3-1：@Import({导入的类.class}),容器中会自动注册这些组件，id默认为类的全限定名
+     *      3-2：ImportSelector 接口:返回需要导入的组件全类名（String数组）
+     *      3-3：ImportBeanDefinitionRegistrar接口，
+     *
+     * */
 }
