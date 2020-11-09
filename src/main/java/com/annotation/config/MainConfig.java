@@ -26,12 +26,12 @@ import org.springframework.stereotype.Service;
 
         }
 )
-//@ComponentScan 扫描@Service/@Component/@Repository/@Controller 拒接修饰的类，可重复添加在同一个配置类上
+//@ComponentScan 扫描@Service/@Component/@Repository/@Controller 直接修饰的类，可重复添加在同一个配置类上
 //@ComponentScan value:指定要扫描的包路径
 //@ComponentScan excludeFilters=Filter[]:排除要扫描的类
 //@ComponentScan includeFilters=Filter[]:扫描的时候包含那些类
 //@ComponentScan FilterType.ASSIGNABLE_TYPE按照指定的类型扫描，及其继承的子类都会被扫描
-//@ComponentScan FilterType.CUSTOM 自定义过滤规则筛选，需要继承FilterType接口，并实现其match方法ß
+//@ComponentScan FilterType.CUSTOM 自定义过滤规则筛选，需要继承FilterType接口，并实现其match方法
 //@ComponentScan FilterType.REGEX 按照指定的类型扫描，及其继承的子类都会被扫描
 public class MainConfig {
 
