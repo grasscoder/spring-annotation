@@ -11,7 +11,6 @@ import org.springframework.context.annotation.FilterType;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 @Configuration //配置类==配置文件，告诉Spring这是一个配置类
 @ComponentScan(value = "com.annotation", useDefaultFilters = false,

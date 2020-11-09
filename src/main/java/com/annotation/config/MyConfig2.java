@@ -47,7 +47,7 @@ public class MyConfig2 {
      * 3、@Import 快速给容器中导入一个组件
      *      3-1：@Import({导入的类.class}),容器中会自动注册这些组件，id默认为类的全限定名
      *      3-2：ImportSelector 接口:返回需要导入的组件全类名（String数组）
-     *      3-3：ImportBeanDefinitionRegistrar接口，
+     *      3-3：ImportBeanDefinitionRegistrar接口，手动注册
      *
      * */
 }
